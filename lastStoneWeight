@@ -1,0 +1,29 @@
+def lastStoneWeight(stones):
+
+    while len(stones)>1:
+        stones.sort()
+        stones.reverse()
+        if stones[0] == stones[1]:
+            stones.remove(stones[0])
+            stones.remove(stones[0])
+        else:
+            stones[0] = stones[0] - stones[1]
+            stones.remove(stones[1])
+    if len(stones) == 0:
+        return 0
+    else:
+        return stones[0]
+
+
+data = [2,7,4,1,8,1]
+
+
+
+print(lastStoneWeight(data))
+
+=================================
+70 / 70 test cases passed.
+Status: Accepted
+Runtime: 57 ms
+Memory Usage: 13.9 MB
+=================================
